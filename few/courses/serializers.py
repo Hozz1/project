@@ -11,18 +11,25 @@ class CoursesSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class UserSerializer(serializers.Serializer):
+class RegisterSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True, min_length=8)
+    password2 = serializers.CharField(write_only=True, label="Подтвердите пароль")
+
     class Meta:
         model = User
-        fields = "__all__"
+        fields = ('username', 'email', 'password', 'password2')
 
-class CreateUserSerializer(serializers.ModelSerializer):
+    def validate(self, attrs):
+        if attrs['password'] != attrs['password2']:
+            raise serializers.ValidationError({"password2": "Пароли не совпадают."})
+        return attrs
 
     def create(self, validated_data):
-        user = User.objects.create_user(**validated_data)
+        validated_data.pop('password2')
+        user = User(
+            username=validated_data['username'],
+            email=validated_data['email']
+        )
+        user.set_password(validated_data['password'])
+        user.save()
         return user
-
-    class Meta:
-        model = User
-        fields = ('username', 'password')
-        extra_kwargs = {'password': {'write_only': True}}
