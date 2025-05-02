@@ -1,0 +1,24 @@
+.knowledge-section {
+  margin-bottom: 56px;
+}
+
+.knowledge-section__title {
+  margin-bottom: 55px;
+}
+
+.knowledge__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.knowledge__block {
+  display: inline-block;
+  background-color: #d9d9d9;
+  padding: 20px 83px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 114.75%;
+
+  border-radius: 67px;
+}

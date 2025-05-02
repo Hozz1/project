@@ -1,0 +1,8 @@
+.title {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.title_green {
+  color: var(--dark-green-color);
+}

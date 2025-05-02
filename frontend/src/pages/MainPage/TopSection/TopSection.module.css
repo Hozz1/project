@@ -1,0 +1,13 @@
+.top-section {
+  padding-top: 375px;
+  margin-bottom: 219px;
+}
+
+.top-section__title {
+  margin-bottom: 30px;
+}
+
+.top-section__text {
+  font-size: 32px;
+  font-weight: 700;
+}

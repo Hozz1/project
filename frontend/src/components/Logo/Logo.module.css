@@ -1,0 +1,7 @@
+.logo {
+  display: flex;
+  gap: 10px;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 114.91%;
+}

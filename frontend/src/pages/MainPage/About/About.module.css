@@ -1,0 +1,16 @@
+.about-section {
+  margin-bottom: 180px;
+}
+
+.about__title {
+  margin-bottom: 55px;
+}
+
+.about__container {
+  display: flex;
+  flex-direction: row;
+  gap: 61px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
