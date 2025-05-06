@@ -2,37 +2,23 @@
   display: flex;
   justify-content: center;
   padding-top: 50px;
-  align-items: center;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 17px;
-  width: 520px;
-}
-
-.form p {
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.form input:last-of-type {
-  margin-bottom: 5px;
-}
-
-.form button {
-  margin-bottom: 5px;
-}
-
-.form a {
-  color: var(--dark-green-color);
 }
 
 .title {
   font-size: 64px;
   font-weight: 700;
-  text-align: center;
+  margin-bottom: 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.form input:last-of-type {
   margin-bottom: 5px;
 }

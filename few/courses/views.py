@@ -5,7 +5,7 @@ from rest_framework import permissions
 
 from  .models import Courses, Category
 from .permissions import IsAdminOrReadOnly, IsUserOrReadOnly
-from .serializers import CoursesSerializer,  RegisterSerializer
+from .serializers import CoursesSerializer, RegisterSerializer, UserSerializer
 from rest_framework.decorators import action
 from rest_framework import viewsets, generics, mixins
 
@@ -31,4 +31,11 @@ class RegisterView(generics.CreateAPIView):
     Точка для регистрации нового пользователя.
     """
     serializer_class = RegisterSerializer
-    permission_classes = [permissions.AllowAny]
+    permission_classes = (IsAdminOrReadOnly, )
+
+class CurrentUserView(generics.RetrieveAPIView):
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user

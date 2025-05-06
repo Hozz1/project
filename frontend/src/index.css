@@ -25,9 +25,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
   color: #000000;
-  background-color: var(--main-gray-color);
+  background: linear-gradient(135deg, #d6f5e1 0%, #34c759 100%);
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 }
+
 
 #root {
   display: flex;

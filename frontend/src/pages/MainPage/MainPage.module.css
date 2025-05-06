@@ -1,0 +1,59 @@
+/* Лимитируем максимальную ширину и центрируем сайт */
+.container {
+  max-width: 85%;
+  margin: 5px auto;
+  padding: 5px 0;
+  scroll-behavior: smooth;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #222;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* пространство между секциями */
+}
+
+/* Можно добавить отступы внутри секций, если нужно */
+/* Верхний блок */
+.container > :nth-child(1) {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Секции с анимацией */
+.container > :nth-child(2) {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.container > :nth-child(3) {
+  animation: fadeInUp 0.6s ease 0.2s forwards;
+}
+
+/* Анимация плавного появления снизу */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+    gap: 20px;
+  }
+
+  .container > :nth-child(1) {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+}
+
+  

@@ -1,7 +1,125 @@
 .footer {
   width: 100%;
+  background-color: #353434;
+  color: #eee;
+  border-top: 5px solid #000;
+  padding: 40px 20px 60px;
+  font-family: "Inter", sans-serif;
   display: flex;
-  justify-content: flex-end;
-  padding: 40px 0 110px 0;
-  border-top: 5px solid #000000;
+  justify-content: center;
 }
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Верхняя часть футера: лого и навигация */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logoLink {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.logoLink:hover,
+.logoLink:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+.nav {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  color: #eee;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover,
+.navLink:focus {
+  color: #4ade80; /* приятный зелёный */
+  outline: none;
+}
+
+/* Нижняя часть футера: копирайт и соцсети */
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socialLink {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.socialLink:hover,
+.socialLink:focus {
+  color: #4ade80;
+  outline: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .topRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    width: 100%;
+    text-align: left;
+  }
+
+  .navList {
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+

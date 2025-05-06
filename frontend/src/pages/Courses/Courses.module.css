@@ -1,23 +1,129 @@
 .courses-page {
-  padding-top: 30px;
+  padding: 20px;
 }
 
 .title {
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: #222;
 }
 
 .courses-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 16px;
+}
+
+/* Карточка курса */
+.course-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  user-select: none;
+  outline: none;
+}
+
+.course-card:focus,
+.course-card:hover {
+  background-color: #e6f0ff;
+  box-shadow: 0 4px 12px rgba(0, 120, 255, 0.3);
+}
+
+.course-card__image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.course-card__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  user-select: none;
+}
+
+.course-block {
+  margin-bottom: 24px;
 }
 
 .course-card {
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+  background-color: #fff;
+}
+
+.course-card:hover,
+.course-card:focus {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.course-card__image {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+  object-fit: contain;
+}
+
+.course-card__title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/* Контейнер с темами — вертикальное расположение */
+.topics-list {
+  margin-top: 12px;
+  padding-left: 64px; /* чтобы темы были с отступом под курсом */
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  background-color: #f2f2f2;
-  max-width: 500px;
-  border-radius: 10px;
+  gap: 16px;
 }
+
+/* Карточка темы */
+.topic-card {
+  padding: 12px 16px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.topic-card:hover,
+.topic-card:focus {
+  background-color: #e6f0ff;
+  box-shadow: 0 0 8px rgba(0, 90, 255, 0.3);
+  outline: none;
+}
+
+.topic-card__title {
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.topic-card__description {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.3;
+}
+
+
+
+

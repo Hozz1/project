@@ -1,37 +1,149 @@
+:root {
+  --color-bg: #353434;
+  --color-text: #ffffff;
+  --color-primary: #735755;
+  --color-link-hover: #ffa07a;
+  --font-family: 'Inter', sans-serif;
+}
+
 .header {
-  padding: 100px 0 20px 0;
+  padding: 10px 10px 10px; /* уменьшил padding сверху для баланса */
+  background-color: var(--color-bg);
+  font-family: var(--font-family);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .header__logo {
-  font-size: 30px;
-  color: #f2f2f2;
+  font-size: 2rem;
+  color: var(--color-text);
   font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.header__logo:hover,
+.header__logo:focus {
+  transform: scale(1.05);
+  outline: none;
 }
 
 .header__navigation ul {
   list-style: none;
   display: flex;
   gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .header__navigation ul li a {
+  color: var(--color-text);
   text-decoration: none;
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 114.9%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
 }
 
 .header__navigation ul li a:visited {
-  color: #000;
+  color: var(--color-text);
 }
 
-.header__navigation ul li a:hover {
-  color: #735755;
+.header__navigation ul li a:hover,
+.header__navigation ul li a:focus {
+  color: var(--color-primary);
+  background-color: rgba(115, 87, 85, 0.15);
+  outline: none;
   cursor: pointer;
 }
+
+/* Мобильное меню */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.menu-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  position: relative;
+}
+
+/* Анимация бургер-меню при открытии */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 8px;
+  position: absolute;
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 8px;
+  position: absolute;
+}
+
+/* Скрываем меню навигации на мобильных */
+.header__navigation {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .header__navigation {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: var(--color-bg);
+    height: calc(100vh - 60px);
+    width: 250px;
+    flex-direction: column;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .header__navigation.open {
+    transform: translateX(0);
+  }
+
+  .header__navigation ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+

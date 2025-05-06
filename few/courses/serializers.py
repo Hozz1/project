@@ -10,6 +10,12 @@ class CoursesSerializer(serializers.ModelSerializer):
         model = Courses
         fields = "__all__"
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email', 'first_name', 'last_name', "date_joined", "is_staff", "last_login")
+        read_only_fields = fields  # фронт не меняет данные по этому апи
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=8)
